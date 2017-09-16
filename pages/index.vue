@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h2 class="title">nilgradisnik.com</h2>
+      <h2 class="title">nil gradisnik</h2>
     </div>
   </section>
 </template>
