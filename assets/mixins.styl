@@ -1,0 +1,10 @@
+
+gradient-blue1()
+  return linear-gradient(to bottom, #2aace7 0%, #1cc7ff 100%)
+
+image-width(img)
+  return image-size('../static/images/' + img)[0]
+image-height(img)
+  return image-size('../static/images/' + img)[1]
+retina-image(img)
+  image: '/static/images/' + img image-width(img) image-height(img)
