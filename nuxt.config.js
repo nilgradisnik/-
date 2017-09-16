@@ -1,22 +1,25 @@
 
 const webpack = require('webpack')
+const md = require('markdown-it')
+const hljs = require('highlight.js')
 
 module.exports = {
   router: {
-    base: 'gh-pages' === process.env.NODE_ENV ? '/home/' : '/'
+    base: 'gh-pages' === process.env.NODE_ENV ? '/' : '/'
   },
   modules: [
     '@nuxtjs/markdownit'
   ],
   css: [
-    '@/assets/normalize.css'
+    '@/assets/normalize.css',
+    '@/assets/hljs.css'
   ],
 
   /*
   ** Headers of the page
   */
   head: {
-    title: 'home',
+    title: 'Nil Gradisnik',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -59,5 +62,15 @@ module.exports = {
         }
       })
     ]
+  },
+  markdownit: {
+    highlight: (str, lang) => {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(lang, str).value
+        } catch (__) {}
+      }
+      return ''
+    }
   }
 }

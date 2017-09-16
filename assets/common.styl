@@ -16,18 +16,29 @@ html
   box-sizing: border-box
 
 h1, h2, h3, h4
+  font-weight: 300
   text-transform: uppercase
   letter-spacing: 2px
 
+p
+  line-height: 1.4em
+
 a
   text-decoration: none
+  
+pre
+  margin: 32px 0
+  font-family: monospace
+  font-size: 0.8em
+  line-height: 1.4em
 
 *, *:before, *:after
   box-sizing: border-box
   margin: 0
 
-.container
+.base-container
   min-height: 100vh
+  padding: 2em
   display: flex
   background-repeat: no-repeat
   background-position: center center
@@ -37,4 +48,13 @@ a
     padding: 0
     align-items: center
     text-align: center
+  > section
+    max-width: container-width
 
+.title
+  display: block
+  padding: 32px 0
+  font-weight: 300
+  font-size: 42px
+  color: #35495e
+  letter-spacing: 1px
